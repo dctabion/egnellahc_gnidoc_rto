@@ -1,0 +1,3 @@
+Frost|Robert|male|grey|3/26/1874
+Emily|Dickinson|female|green|12/10/1830
+Whitman|Walt|male|pink|5/31/1819

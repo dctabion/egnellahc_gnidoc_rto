@@ -1,1 +1,5 @@
-Vader|Darth|male|black|05/2/1995
+Vader,Darth,male,black,5/2/1995
+Skywalker,Luke,male,tan,9/4/2010
+Skywalker,Leia,female,brown,9/4/2010
+Yoda,Master,male,green,12/25/1492
+Beru,Aunt,female,orange,4/20/1993
