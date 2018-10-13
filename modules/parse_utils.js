@@ -6,7 +6,7 @@ module.exports = {
 
   parseLine: function(line) {
     console.log('------in parseLine()');
-    console.log('line: ', line);
+    // console.log('input line: ', line);
 
     let attributes = [];
 
