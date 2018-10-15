@@ -1,8 +1,5 @@
-const parseUtils = require ('./modules/parse_utils.js');
-const sortUtils = require ('./modules/sort_utils.js');
-
-const { fileToRecordsPromise, convertFilesToRecords } = parseUtils;
-const { stableSort, sortFemalesFirst, sortLastNameDescending, sortDOBAscending, displayRecords} = sortUtils;
+const { fileToRecordsPromise, convertFilesToRecords } = require ('./modules/parse_utils.js');
+const { stableSort, sortFemalesFirst, sortLastNameDescending, sortDOBAscending, displayRecords} = require ('./modules/sort_utils.js');
 
 // Get filenames to parse.  Drop first two arguements which should be 'node' and 'app filename'.
 let filenames = process.argv;

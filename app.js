@@ -6,6 +6,7 @@ var lessMiddleware = require('less-middleware');
 var logger = require('morgan');
 
 var indexRouter = require('./api/routes/index');
+var recordsRouter = require('./api/routes/records');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/records', recordsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,5 +39,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+global.records = [];
 
 module.exports = app;
