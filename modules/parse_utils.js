@@ -1,10 +1,10 @@
 const fs = require("fs");
 
+/**
+ * Misc utilities
+ */
 module.exports = {
 
-  /**
-   * Misc utilities
-   */
 
   parseLine: function(line) {
     // console.log('------in parseLine()');
@@ -46,7 +46,7 @@ module.exports = {
   },
 
 
-  fileToRecords: function(filename) {
+  fileToRecordsPromise: function(filename) {
     return new Promise((resolve, reject) => {
       fs.readFile( filename, 'utf-8', (err, file) => {
         if (err) {
@@ -59,22 +59,22 @@ module.exports = {
     })
   },
 
-  /**
-   * Sort functions
-   */
+  convertFilesToRecords: function(files) {
+    let records = [];
+    for (file of files) {
+      // Create an array where each item is a line from the file
+      let lines = file.split('\n')
 
-   sortLastName: function() {
-     return 42;
-   },
+      // Remove extra blank line from array at end
+      lines.splice(lines.length - 1,1);
 
-  sortGender: function() {
-    return 42;
-  },
-
-  sortBirthday: function() {
-    return 42;
-  },
-
-
-
+      // Add to array of record objects
+      for (let line of lines) {
+        // parse record and put into record object
+        const record = module.exports.parseLine(line);
+        records.push(record);
+      }
+    }
+    return records;
+  }
 };
